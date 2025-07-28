@@ -1,0 +1,68 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>UTC</title>
+<title>Hora UTC</title> 
+<script language="JavaScript"> 
+function horacont(){ 
+    utcActual = new Date() 
+    hora = utcActual.getUTCHours() 
+    minuto = utcActual.getMinutes() 
+    segundo = utcActual.getSeconds() 
+    dia = utcActual.getUTCDate()   
+    mes = utcActual.getMonth()+1
+    ano = utcActual.getYear()
+
+
+
+    str_segundo = new String (segundo) 
+    if (str_segundo.length == 1) 
+       segundo = "0" + segundo 
+
+    str_minuto = new String (minuto) 
+    if (str_minuto.length == 1) 
+       minuto = "0" + minuto 
+
+    str_hora = new String (hora) 
+    if (str_hora.length == 1) 
+       hora = "0" + hora 
+       
+    str_dia = new String (dia) 
+    if (str_dia.length == 1) 
+       dia = "0" + dia 
+   
+     str_mes = new String (mes) 
+    if (str_mes.length == 1) 
+       mes = "0" + mes 
+ 
+
+    horautc = "  UTC = " + hora + " : " + minuto + " : " + segundo 
+    fechautc = " del " + dia + "/" + mes + "/" + ano 
+    
+    document.form_hora.hora.value = horautc + fechautc
+
+    setTimeout("horacont()",1000) 
+} 
+</script> 
+</head>
+
+<body onload="horacont()" bgcolor="#C0C0C0">
+
+
+<form name="form_hora"> 
+  <div align="center">
+    <center> <table width="20" cellspacing="0" cellpadding="0" bordercolor="#000000" border="0" bgcolor="#000000">  
+<td valign="middle" align="center" bgcolor="#000000">  
+<p align="center">  
+<font face="Arial Black" size="3"><b>  
+<input type="text" name="hora" size="35" style="background-color : Black; color : red; font-family :  Arial black; font-size : 15pt; text-align : center;" onfocus="window.document.form_hora.hora.blur()">
+</b></font>
+
+    </table>
+    </center>
+  </div>
+
+</body> 
